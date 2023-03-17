@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 var corOptions = {
-  origin: "https://localhost:8082",
+  origin: "https://localhost:8083",
 };
 
 // middleware
@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 const inputRoutes = require("./Routes/inputRoutes");
 const loginRoutes = require("./Routes/loginRoutes");
 
-app.use("/api", inputRoutes);
+app.use("/api/inputValue/", inputRoutes);
 app.use("/api", loginRoutes);
 
 //  testing api
