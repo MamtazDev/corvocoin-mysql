@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 
 const app = express();
@@ -22,7 +23,7 @@ const inputRoutes = require("./Routes/inputRoutes");
 const loginRoutes = require("./Routes/loginRoutes");
 
 app.use("/api/inputValue/", inputRoutes);
-app.use("/api", loginRoutes);
+app.use("/api/user/", loginRoutes);
 
 //  testing api
 app.get("/", (req, res) => {
@@ -32,5 +33,5 @@ app.get("/", (req, res) => {
 // server
 
 app.listen(PORT, () => {
-  console.log(`Server is runing on port ${PORT}`);
+  console.log(`Server is runing on port ${PORT}`.blue.bold);
 });
